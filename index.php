@@ -4,6 +4,9 @@
     <title>Three Toe</title>
   </head>
   <body>
-    <?php echo threetoe_send_sms('0001'); ?>
+    <?php threetoe_send_sms(); ?>
+
+    <?php // respond
+    //echo three_toe_reply_to_sms(); ?>
   </body>
 </html>
