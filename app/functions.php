@@ -1,7 +1,7 @@
 <?php
 
 function threetoe_send_sms($filename) {
-  global $data_location, $twilio_sid, $twilio_token;
+  global $data_location, $twilio_sid, $twilio_token, $twilio_phonenumber, $test_phonenumber;
 
   $filename = ( isset($filename) ) ? $filename . '.txt' : '0001.txt';
 
@@ -14,12 +14,12 @@ function threetoe_send_sms($filename) {
 
   return $response;
 
-  /*$client = new Services_Twilio($sid, $token);
+  $client = new Services_Twilio($sid, $token);
   $message = $client->account->messages->sendMessage(
-    '9991231234', // From a valid Twilio number
-    '5702674662', // Text this number
-    "Hello there."
-  );*/
+    $twilio_phonenumber, // Valid Twilio number
+    $test_phonenumber, // Text this number
+    $response
+  );
 
 }
 ?>
