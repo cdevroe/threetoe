@@ -1,7 +1,7 @@
 <?php
 
 include('config.php');
-require '/path/to/twilio-php/Services/Twilio.php';
+require 'lib/twilio-php/Services/Twilio.php';
 
 include('functions.php');
 
