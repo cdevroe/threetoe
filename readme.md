@@ -9,7 +9,7 @@ Three Toe accepts a [Twilio](http://twilio.com) webhook POST and responds to the
 3. Three Toe looks for "T0001.txt" in /responses
 4. If found, responds. If not found, responds with nopropertyinfo.txt
 
-This simple script was built to scratch an itch and learn the basics of the Twilio API. You can [read more about the backstory on my blog](http://cdevroe.com/).
+This simple script was built to scratch an itch and learn the basics of the Twilio API. You can [read more about the backstory on my blog](http://cdevroe.com/2016/06/24/three-toe-a-simple-sms-autoresponder-on-top-of-the-twilio-api/).
 
 ## Installation
 
