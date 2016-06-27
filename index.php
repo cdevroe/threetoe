@@ -24,7 +24,8 @@ along with this program.  If not, see http://www.gnu.org/licenses.
 
 include('app/init.php');
 
-if ( isset($_POST) ) :
+// Determine if Twilio is sending a request
+if ( isset($_POST) && isset($_POST['Body']) ) :
   threetoe_respond();
   exit;
 else : ?>
@@ -36,7 +37,7 @@ else : ?>
   <body>
     <h1>Three Toe</h1>
     <p>A simple SMS autoresponder.</p>
-    <p>Written by <a href="http://cdevroe.com/">Colin Devroe</a></p>
+    <p><small>Written by <a href="http://cdevroe.com/">Colin Devroe</a></small></p>
   </body>
 </html>
 <?php endif; ?>

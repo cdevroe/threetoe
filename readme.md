@@ -22,6 +22,9 @@ This simple script was built to scratch an itch and learn the basics of the Twil
 
 ## Version History
 
+### 0.2.1 - June 27, 2016
+  - Fixed: App determination if Twilio is sending a request or not
+
 ### 0.2.0 - June 27, 2016
   - Added: Code & Response configuration panel
   - Update: Generic "not found" response to make less real estate specific
