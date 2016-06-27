@@ -9,4 +9,6 @@ $twilio_token =               ""; // Your Auth Token from www.twilio.com/user/ac
 $twilio_phonenumber =         ''; // Phone number purchased from Twilio
 $test_phonenumber =           ''; // Your phone number? Used for testing or errors
 
+$configure_password =         ''; // To create, edit, or delete responses
+
 ?>
