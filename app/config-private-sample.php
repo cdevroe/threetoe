@@ -3,6 +3,8 @@
  * Private configuration variables, copy this to config-private.php
 */
 
+$app_url =                    ""; // The URL of your application
+
 $twilio_sid =                 ""; // Your Account SID from www.twilio.com/user/account
 $twilio_token =               ""; // Your Auth Token from www.twilio.com/user/account
 

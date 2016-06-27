@@ -20,9 +20,9 @@ function threetoe_respond() {
   endif;
 
   // If no code given, automatically respond with nopropertyinfo.txt
-  $filename =     ( isset($filename) ) ? strtolower($filename) . '.txt' : 'nopropertyinfo.txt';
+  $filename =     ( isset($filename) ) ? strtolower($filename) . '.txt' : 'notfound.txt';
   // If code response found, use file, if not, automatically respond with nopropertyinfo.txt
-  $filename =     ( file_exists($data_location.$filename) ) ? $filename : 'nopropertyinfo.txt';
+  $filename =     ( file_exists($data_location.$filename) ) ? $filename : 'notfound.txt';
 
   $file_handle =  fopen($data_location.$filename, "r");
   $response =     fread($file_handle, filesize($data_location.$filename));
@@ -39,7 +39,7 @@ function threetoe_respond() {
 }
 
 function responses_add($code) {
-  global $_POST, $data_location, $configure_password;
+  global $_POST, $app_url, $data_location, $configure_password;
 
   if ( $_POST['password'] != $configure_password ) :
     die('Incorrect password provided.');
@@ -54,13 +54,13 @@ function responses_add($code) {
   $file_handle =  fopen($data_location.$filename, "w");
   fwrite ( $file_handle , 'Write a response for this code.' );
 
-  header('Location: http://threetoe.cd/configure/?response='.$code);
+  header('Location: '.$app_url.'configure/?response='.$code);
   exit;
   return;
 }
 
 function responses_edit($code,$response) {
-  global $_POST, $data_location, $configure_password;
+  global $_POST, $app_url, $data_location, $configure_password;
 
   if ( $_POST['password'] != $configure_password ) :
     die('Incorrect password provided.');
@@ -76,13 +76,13 @@ function responses_edit($code,$response) {
   $file_handle =  fopen($data_location.$filename, "w");
   fwrite ( $file_handle , $response );
 
-  header('Location: http://threetoe.cd/configure/?response='.$code);
+  header('Location: '.$app_url.'configure?response='.$code);
   exit;
   return;
 }
 
 function responses_delete($code) {
-  global $_POST, $data_location, $configure_password;
+  global $_POST, $app_url, $data_location, $configure_password;
 
   if ( $_POST['password'] != $configure_password ) :
     die('Incorrect password provided.');
@@ -92,7 +92,7 @@ function responses_delete($code) {
   $filename = $code.'.txt';
 
   unlink($data_location.$filename);
-  header('Location: http://threetoe.cd/configure/');
+  header('Location: '.$app_url.'configure/');
   exit;
   return;
 }

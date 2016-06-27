@@ -51,7 +51,7 @@ endif;
       </select></p>
     <?php elseif ( isset($_GET['response']) && $_GET['response'] != 'add_new_code' ) : ?>
       <h3>Editing code "<?php echo $_GET['response']; ?>"</h3>
-      <p><a href="/configure"><< Go back</a></p>
+      <p><a href="<?php echo $app_url; ?>configure"><< Go back</a></p>
     <?php endif; ?>
 
       <?php if ( isset($_GET['response']) && $_GET['response'] == 'add_new_code' ) : ?>
@@ -60,7 +60,7 @@ endif;
         <input type="text" maxlength="8" size="8" id="code" name="code"> <small>E.g. "T0001" or "BLUE123" or "C210001"</small></p>
         <p><label for="password">Password:</label>
         <input type="password" id="password" name="password"></p>
-        <p><input type="submit" value="Add"> <small><a href="/configure">Cancel</a></small></p>
+        <p><input type="submit" value="Add"> <small><a href="<?php echo $app_url; ?>configure">Cancel</a></small></p>
 
       <?php endif; ?>
 
@@ -74,7 +74,7 @@ endif;
 
           <p><label for="password">Password:</label>
           <input type="password" id="password" name="password"></p>
-          <p><input type="submit" value="Save"> <?php if ( $_GET['response'] != 'nopropertyinfo' ) : ?><small style="text-align: right;"><a href="#" id="deletecode">Delete "<?php echo $_GET['response']; ?>" code?</a></small><?php endif; ?></p>
+          <p><input type="submit" value="Save"> <?php if ( $_GET['response'] != 'notfound' ) : ?><small style="text-align: right;"><a href="#" id="deletecode">Delete "<?php echo $_GET['response']; ?>" code?</a></small><?php endif; ?></p>
 
         <?php else : ?>
           <p>No response found. Perhaps an error?</p>
@@ -84,6 +84,6 @@ endif;
     </form>
     <hr>
     <p><small>Written by <a href="http://cdevroe.com/">Colin Devroe</a></small></p>
-    <script type="text/javascript" src="configure.js"></script>
+    <script type="text/javascript" src="<?php echo $app_url; ?>configure/configure.js"></script>
   </body>
 </html>
