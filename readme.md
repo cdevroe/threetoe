@@ -22,6 +22,11 @@ This simple script was built to scratch an itch and learn the basics of the Twil
 
 ## Version History
 
+### 0.3.0 - June 28, 2016
+  - New: Bootstrap-based UI
+  - New: About page.
+  - Fixed: Mobile considerations
+
 ### 0.2.1 - June 27, 2016
   - Fixed: App determination if Twilio is sending a request or not
 

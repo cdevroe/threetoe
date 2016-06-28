@@ -22,13 +22,7 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see http://www.gnu.org/licenses.
 */
 
-include('app/init.php');
-
-// Determine if Twilio is sending a request
-if ( isset($_POST) && isset($_POST['Body']) ) :
-  threetoe_respond();
-  exit;
-else : ?>
+include('app/init.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -36,7 +30,7 @@ else : ?>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Three Toe</title>
+    <title>ThreeToe</title>
     <link rel="stylesheet" href="<?php echo $app_url; ?>assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $app_url; ?>assets/css/styles.css">
 </head>
@@ -50,7 +44,7 @@ else : ?>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav">
                     <li role="presentation"><a href="<?php echo $app_url; ?>configure/">Configure </a></li>
-                    <li role="presentation"><a href="<?php echo $app_url; ?>about.php">About </a></li>
+                    <li class="active" role="presentation"><a href="<?php echo $app_url; ?>about.php">About </a></li>
                 </ul>
             </div>
         </div>
@@ -58,8 +52,10 @@ else : ?>
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Three Toe</h1>
-                <p>A simple SMS autoresponder.</p>
+                <h1>About Three Toe <?php echo $app_version; ?></h1>
+                <p>Three Toe is a simple SMS autoresponder built on top of the Twilio API. Send a phone number a code, get an SMS in response. It was <a href="http://cdevroe.com/2016/06/24/three-toe-a-simple-sms-autoresponder-on-top-of-the-twilio-api/">built by Colin Devroe to scratch an itch</a>.</p>
+                <p>If you would like something like this, or would like to have Three Toe customized for your needs, <a href="http://cdevroe.com/hire">just ask</a>.</p>
+                <p><a href="https://github.com/cdevroe/threetoe">Code available on Github</a></p>
             </div>
         </div>
     </div>
@@ -77,4 +73,3 @@ else : ?>
     <script src="<?php echo $app_url; ?>assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
-<?php endif; ?>
