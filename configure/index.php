@@ -20,10 +20,11 @@ if ( isset($_POST) && isset($_POST['action']) ) :
   endswitch;
 endif;
 ?>
-
+<!DOCTYPE html>
 <html>
   <head>
     <title>Configure: Three Toe</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
   </head>
   <body>
     <h1>Three Toe</h1>
